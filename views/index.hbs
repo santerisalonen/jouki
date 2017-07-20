@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
-    <script src="js/build.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
         
-    <link type="text/css" rel="stylesheet" href="css/build.css"/>
+        <script src="js/build.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="css/build.css"/>
+        
+        <title>Jouki Tikkanen</title>
+    
+        <script>
+            // generate random background
+            var num = Math.floor(Math.random() * 4) + 1  
+            console.log(num);
+            
+            $(document).ready(function() {
+               
+                $('#hero-img').css({
+                   'background' : '#000 url("/img/hero' + num + '.jpg") top left no-repeat',
+                    'opacity' : '0.1'
+                });
+                $('bg-overlay').fadeOut(300, function() {
+                     $('bg-overlay').delete();
+                })
+                $('#hero-img').fadeTo('slow', 1, function() {
+                  // ready  
+                });
+            });
+        </script>
+
+    </head>
         
     <body>
         
@@ -30,12 +56,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Brand</a>
+          <a class="navbar-brand" href="#">Jouki Tikkanen</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
+          
         <div class="collapse navbar-collapse" id="main-nav-collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
             {{#each contentful.pages}}
                 <li class=""><a class="button" href="{{this._url}}">{{this.name}}</a></li>
             {{/each}} 
@@ -49,36 +76,42 @@
 
     <div class="container-fluid" id="hero-img">
         
+        <div class="col-md-3 col-md-offset-6 col-sm-4 col-sm-offset-4 col-xs-8">
+            
+             <div class="widget instagram">
+                <!-- InstaWidget -->
+                <a href="https://instawidget.net/v/user/jouki_" id="link-b4bce161325c2597a7aaae7c9a05b5ec756f8e1bfda45de2ca72def62a1c79b5">@jouki_</a>
+                <script src="https://instawidget.net/js/instawidget.js?u=b4bce161325c2597a7aaae7c9a05b5ec756f8e1bfda45de2ca72def62a1c79b5&width=300px"></script>    
+            </div>
+
+        </div>    
         
+        <div class="col-md-3 col-sm-4 hidden-xs">
+            
+            <div class="widget facebook">
+               <div class="fb-page" data-href="https://www.facebook.com/JoukiTikkanenRG/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/JoukiTikkanenRG/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/JoukiTikkanenRG/">Jouki Tikkanen - gymnast</a></blockquote></div>     
+            
+            
+            </div>
+
+
+        </div>  
     </div>
-    
-    <div class="col-md-6 col-xs-12">
-        <!-- InstaWidget -->
-        <a href="https://instawidget.net/v/user/jouki_" id="link-00782abb0d26ded017d136409bd27050f97bea16d134497fa4ff071d6c300f4d">@jouki_</a>
-        <script src="https://instawidget.net/js/instawidget.js?u=00782abb0d26ded017d136409bd27050f97bea16d134497fa4ff071d6c300f4d&width=300px"></script>        
         
-    </div>
-        
-        
-    <div class="col-md-6 col-xs-12">
-        
-       <div class="fb-page" data-href="https://www.facebook.com/JoukiTikkanenRG/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/JoukiTikkanenRG/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/JoukiTikkanenRG/">Jouki Tikkanen - gymnast</a></blockquote></div> 
+    <div class="container-fluid">
+
+        <div class="col-md-6 col-xs-12">
+            {{#each contentful.posts}}
+
+             <h2><a class="button" href="{{this._url}}">{{this.headline}}</a></h2>
+
+
+            {{/each}}
+        </div>
              
         
-    </div>
-        
-   
+     </div>
+      
 
-        
-        <h1>INDEX</h1>
-        
-        
-        {{#each contentful.posts}}
-            
-            <h2>{{this.headline}}</h2>
-            
-            <a class="button" href="{{this._url}}">read more</a>
-        
-        {{/each}}
     </body>
 </html>

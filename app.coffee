@@ -32,7 +32,7 @@ module.exports =
           path: (e) -> "posts/#{slugify(e.headline)}"
           
     js_pipeline(files: [ "assets/js/jquery-3.2.1.js", "assets/js/*.js"], out: 'js/build.js', minify: true)
-    css_pipeline(files: "assets/css/**", out: 'css/build.css', minify: true)
+    css_pipeline(files: [ "assets/css/bootstrap.css", "assets/css/master.css"], out: 'css/build.css', minify: false)
   ]
 
   stylus:
