@@ -1,16 +1,77 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
-    <script src="js/build.js"></script>
-    <link type="text/css" rel="stylesheet" href="css/build.css"/>
-    
-    </head>
+        <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+        
+        <script src="js/build.js"></script>
 
-    <body>
+        <link type="text/css" rel="stylesheet" href="css/build.css"/>
+        
+        <title>Jouki Tikkanen</title>
     
-        <h1>{{entry.headline}}</h1>
+
+    </head>
         
-        <p>{{entry.body}}</p>
+    <body id="page">
         
+    <!-- COMMENT -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=788868931278924";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+        
+        
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Jouki Tikkanen</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+          
+        <div class="collapse navbar-collapse" id="main-nav-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            {{#each contentful.pages}}
+                <li class=""><a class="button" href="{{this._url}}">{{this.name}}</a></li>
+            {{/each}} 
+   
+          </ul>
+
+          
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid centered" id="hero-img">
+   
+       
+    </div>
+        
+    <div class="container" id="main">
+        
+        <!-- <h2>{{entry.name}}</h2> -->
+     
+        <span class="marked">{{entry.body}}</span>
+
+       
+    </div>
+
+    <div class="container-fluid" id="footer">
+    
+    </div>
+
     </body>
 </html>

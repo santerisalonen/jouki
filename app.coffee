@@ -1,18 +1,22 @@
-axis         = require 'axis'
+
 # set up contentful config as environment variables (in dev)
 try 
   env = require './env' 
   process.env.access_token = env.access_token
   process.env.space_id = env.space_id
 catch err
-
+    
+axis         = require 'axis'
 rupture      = require 'rupture'
 autoprefixer = require 'autoprefixer-stylus'
 js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
+marked       = require 'marked'
+
 slugify = require 'slug'
 slugify.defaults.modes['pretty']['lower'] = true 
+
 
 module.exports =
   ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'env.coffee', 'ship.*conf']
@@ -34,7 +38,6 @@ module.exports =
     js_pipeline(files: [ "assets/js/jquery-3.2.1.js", "assets/js/*.js"], out: 'js/build.js', minify: true)
     css_pipeline(files: [ "assets/css/bootstrap.css", "assets/css/master.css"], out: 'css/build.css', minify: false)
   ]
-
   stylus:
     use: [axis(), rupture(), autoprefixer()]
     sourcemap: true

@@ -25,7 +25,7 @@
                 $('bg-overlay').fadeOut(300, function() {
                      $('bg-overlay').delete();
                 })
-                $('#hero-img').fadeTo('slow', 1, function() {
+                $('#hero-img').fadeTo('fast', 1, function() {
                   // ready  
                 });
             });
@@ -33,7 +33,7 @@
 
     </head>
         
-    <body>
+    <body id="home">
         
     <!-- COMMENT -->
     <div id="fb-root"></div>
@@ -56,7 +56,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Jouki Tikkanen</a>
+          <a class="navbar-brand" href="/">Jouki Tikkanen</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -76,7 +76,7 @@
 
     <div class="container-fluid" id="hero-img">
         
-        <div class="col-md-3 col-md-offset-6 col-sm-4 col-sm-offset-4 col-xs-8">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-8 col-md-4 col-md-offset-8 col-lg-3 col-lg-offset-9">
             
              <div class="widget instagram">
                 <!-- InstaWidget -->
@@ -86,21 +86,13 @@
 
         </div>    
         
-        <div class="col-md-3 col-sm-4 hidden-xs">
-            
-            <div class="widget facebook">
-               <div class="fb-page" data-href="https://www.facebook.com/JoukiTikkanenRG/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/JoukiTikkanenRG/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/JoukiTikkanenRG/">Jouki Tikkanen - gymnast</a></blockquote></div>     
-            
-            
-            </div>
-
-
-        </div>  
+ 
     </div>
         
-    <div class="container-fluid">
+    <div class="container">
 
-        <div class="col-md-6 col-xs-12">
+        <!--
+        <div class="col-md-2 col-xs-12">
             {{#each contentful.posts}}
 
              <h2><a class="button" href="{{this._url}}">{{this.headline}}</a></h2>
@@ -108,10 +100,83 @@
 
             {{/each}}
         </div>
-             
+        -->
         
+        <div class="col-md-6 col-xs-12">
+         
+            
+          <div class="fb-page" data-href="https://www.facebook.com/JoukiTikkanenRG/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-width="500" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/JoukiTikkanenRG/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/JoukiTikkanenRG/">Jouki Tikkanen - gymnast</a></blockquote></div>  
+            
+
+        </div>
+        <div class="col-md-6 col-xs-12">
+            
+
+            <div class="col-xs-6">
+                <img src="img/logot/w200/telia.jpg" class="t_logo" />
+            </div>
+            <div class="col-xs-6">
+                <img src="img/logot/w200/vantaa.jpg" class="t_logo" />
+            </div>
+            <div class="col-xs-4">
+                <img src="img/logot/w200/dvillena.jpg" class="t_logo" />
+            </div>
+            <div class="col-xs-4">
+                <img src="img/logot/w200/piruetti.jpg" class="t_logo" />
+            </div>  
+            
+            <div class="col-xs-4">
+                <img src="img/logot/w200/finsoffat.jpg" class="t_logo" />
+            </div>  
+        
+            <div class="col-xs-4">
+                <img src="img/logot/w200/lumene.jpg" class="t_logo" />
+            </div>
+            <div class="col-xs-4">
+                <img src="img/logot/w200/t2h.jpg" class="t_logo" />
+            </div>  
+            
+            <div class="col-xs-4">
+                <img src="img/logot/w200/timanttiset.jpg" class="t_logo" />
+            </div>  
+            <div class="col-xs-4">
+                <img src="img/logot/w200/cap.jpg" class="t_logo" />
+            </div>  
+            <div class="col-xs-4">
+                <img src="img/logot/w200/2xu.jpg" class="t_logo" />
+            </div>  
+            
+            <div class="col-xs-4">
+                <img src="img/logot/w200/ok.jpg" class="t_logo" />
+            </div>  
+            
+            <div class="col-xs-4">
+                <img src="img/logot/w200/reino-fri-saatio.jpg" class="t_logo" />
+            </div>  
+            <div class="col-xs-4">
+                <img src="img/logot/w200/svoli.jpg" class="t_logo" />
+            </div>          
+            <div class="col-xs-4">
+                <img src="img/logot/w200/varala.jpg" class="t_logo" />
+            </div>  
+            
+            <div class="col-xs-4">
+                <img src="img/logot/w200/tul.jpg" class="t_logo" />
+            </div>  
+            <div class="col-xs-4">
+                <img src="img/logot/w200/tv.jpg" class="t_logo" />
+            </div>  
+            <div class="col-xs-4">
+                <img src="img/logot/w200/rekolanraikas.jpg" class="t_logo" />
+            </div>   
+        </div>
+
+            
      </div>
       
+    <div class="container-fluid" id="footer">
+    
+    </div>
 
     </body>
 </html>
